@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Simulation Dashboard | Christopher Skabich</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -19,7 +21,7 @@
             --text-sub: #4b5563;
             --font-display: "Syncopate", sans-serif;
             --font-body: "Inter", sans-serif;
-            --accent-color: #ef4444; 
+            --accent-color: #ef4444;
         }
 
         body {
@@ -32,18 +34,22 @@
             line-height: 1.6;
         }
 
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-        
-        /* Image Styling */
-        img { 
-            max-width: 100%; 
-            display: block; 
-            border-radius: 12px; 
-            border: 1px solid #e5e7eb; 
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); 
-            margin: 20px 0; 
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
         }
-        
+
+        /* Image Styling */
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
         .image-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -51,61 +57,197 @@
             margin: 30px 0;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
 
         /* --- NAVIGATION --- */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #f3f4f6; margin-bottom: 60px;}
-        .logo { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
-        .back-link { font-weight: 600; font-size: 0.9rem; color: var(--text-sub); }
-        .back-link:hover { color: var(--text-main); }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #f3f4f6;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .back-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .back-link:hover {
+            color: var(--text-main);
+        }
 
         /* --- CASE STUDY HEADER --- */
-        .project-header { text-align: center; margin-bottom: 80px; }
-        .project-tag { display: inline-block; background: #fee2e2; color: var(--accent-color); padding: 6px 166px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-bottom: 20px; }
-        .project-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; margin: 0 0 20px 0; }
-        .project-subtitle { color: var(--text-sub); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .project-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #fee2e2;
+            color: var(--accent-color);
+            padding: 6px 166px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+        }
+
+        .project-subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
         /* --- META DATA ROW --- */
-        .project-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; padding: 30px; background: #f9fafb; border-radius: 12px; text-align: left; }
-        .meta-item h4 { font-family: var(--font-display); font-size: 0.85rem; color: var(--text-main); margin: 0 0 8px 0; }
-        .meta-item p { margin: 0; color: var(--text-sub); font-size: 0.95rem; }
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            padding: 30px;
+            background: #f9fafb;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .meta-item h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin: 0 0 8px 0;
+        }
+
+        .meta-item p {
+            margin: 0;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* --- PHASE SECTION --- */
+        .phase {
+            margin-bottom: 80px
+        }
+
+        .phase-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin: 0 0 15px 0;
+        }
+
+        .phase-text {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 850px;
+        }
 
         /* --- WALKTHROUGH STEPS --- */
-        .walkthrough-section { margin-bottom: 100px; }
-        .step { margin-bottom: 80px; }
-        .step-number { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color); margin-bottom: 10px; display: block;}
-        .step-title { font-family: var(--font-display); font-size: 1.8rem; margin: 0 0 15px 0; }
-        .step-text { color: var(--text-sub); font-size: 1.1rem; max-width: 850px; }
+        .walkthrough-section {
+            margin-bottom: 100px;
+        }
+
+        .step {
+            margin-bottom: 80px;
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin: 0 0 15px 0;
+        }
+
+        .step-text {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 850px;
+        }
 
         /* --- DATA TABLE STYLING --- */
-        .data-preview { background: #111; color: #10b981; font-family: monospace; padding: 20px; border-radius: 12px; overflow-x: auto; font-size: 0.9rem; margin: 30px 0; border: 1px solid #333;}
+        .data-preview {
+            background: #111;
+            color: #10b981;
+            font-family: monospace;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            margin: 30px 0;
+            border: 1px solid #333;
+        }
 
         /* --- FOOTER --- */
-        footer { text-align: center; padding: 50px 0; color: #9ca3af; font-size: 0.8rem; border-top: 1px solid #f3f4f6; margin-top: 50px;}
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #9ca3af;
+            font-size: 0.8rem;
+            border-top: 1px solid #f3f4f6;
+            margin-top: 50px;
+        }
 
         /* Responsive Grid for Images */
         @media (min-width: 768px) {
-            .image-grid-2 { grid-template-columns: 1fr 1fr; }
+            .image-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
         }
+
         @media (max-width: 768px) {
-            .step-title { font-size: 1.5rem; }
-            .project-title { font-size: 2rem; }
+            .step-title {
+                font-size: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <nav>
-            <div class="logo">Christopher Skabich</div> 
+            <div class="logo">Christopher Skabich</div>
             <a href="index.html" class="back-link">← Back to Portfolio</a>
         </nav>
 
         <header class="project-header">
-            <span class="project-tag">Cybersecurity / AWS Migration</span>
+            <span class="project-tag">Social Engineering</span>
             <h1 class="project-title">Email Phishing Simulation Dashboard</h1>
-            <p class="project-subtitle">An end-to-end security awareness tool designed to deploy, track, and analyze simulated phishing campaigns to educate internal stakeholders.</p>
-            
+            <p class="project-subtitle">An end-to-end security awareness tool designed to deploy, track, and analyze
+                simulated phishing campaigns to educate internal stakeholders.</p>
+
             <div class="project-meta">
                 <div class="meta-item">
                     <h4>Role</h4>
@@ -113,96 +255,128 @@
                 </div>
                 <div class="meta-item">
                     <h4>Tech Stack</h4>
-                    <p>Python (Flask), HTML/CSS, Ngrok, Data Analysis, Social Engineering</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Current Phase</h4>
-                    <p>Migrating to AWS Cloud</p>
+                    <p>Python (Flask), HTML/CSS, Ngrok, AWS</p>
                 </div>
             </div>
         </header>
 
+        <header class="phase">
+            <div>
+                <h2 class="phase-title">Initial Phase</h2>
+                <p1 class="phase-text">The initial phase of this project focuses on building a functional, end-to-end
+                    phishing simulation platform designed to safely evaluate and train an organization's security
+                    awareness. It bridges the gap between administrative campaign management and real-world execution,
+                    providing a controlled environment to deploy realistic email lures, monitor user behavior, and
+                    harvest actionable security metrics.<br><br>To facilitate safe local testing, the architecture in
+                    this phase utilizes Ngrok to securely tunnel the development server, while dedicated test accounts
+                    are leveraged to simulate target user interactions without impacting live environments.</p1>
+            </div>
+        </header>
+
         <main class="walkthrough-section">
-            
+
             <div class="step">
                 <span class="step-number">01.</span>
-                <h2 class="step-title">Dashboard Overview</h2>
-                <p class="step-text">The core of the application is a centralized dashboard where administrators have a bird's-eye view of all security campaigns. The interface is designed to be clean and intuitive, allowing for immediate access to target lists, email templates, and active deployments.</p>
-                
+                <h3 class="step-title">Dashboard Overview</h3>
+                <p class="step-text">The core of the application is a centralized dashboard where administrators have a
+                    bird's-eye view of all security campaigns. The interface is designed to be clean and intuitive,
+                    allowing for immediate access to target lists, email templates, and active deployments.</p>
+
                 <img src="PhishImages/Step_1_FirstLook.jpeg" alt="Main Dashboard Interface">
             </div>
 
             <div class="step">
                 <span class="step-number">02.</span>
-                <h2 class="step-title">Enter Target</h2>
-                <p class="step-text">Administrators can import and manage target user lists. The system organizes potential targets by groups or departments, making it simple to launch focused, department-specific phishing simulations.</p>
-                
+                <h3 class="step-title">Enter Target</h3>
+                <p class="step-text">Administrators can import and manage target user lists. The system organizes
+                    potential targets by groups or departments, making it simple to launch focused, department-specific
+                    phishing simulations.</p>
+
                 <img src="PhishImages/Step_2_EnterTarget.jpeg" alt="Entering a New Target">
             </div>
 
             <div class="step">
                 <span class="step-number">03.</span>
-                <h2 class="step-title">Target Added</h2>
-                <p class="step-text">Once added, the new target appears in the target management list. Administrators can view and edit target details, including department, groups, and interaction history.</p>
-                
+                <h3 class="step-title">Target Added</h3>
+                <p class="step-text">Once added, the new target appears in the target management list. Administrators
+                    can view and edit target details, including department, groups, and interaction history.</p>
+
                 <img src="PhishImages/Step_3_TargetAdded.jpeg" alt="Showing Updated Target List">
             </div>
 
             <div class="step">
                 <span class="step-number">04.</span>
-                <h2 class="step-title">Email Templates</h2>
-                <p class="step-text">A critical part of any phishing simulation is the realism of the lure. Administrators can select from pre-configured email templates or build their own using the built-in HTML editor, configuring sender details like address and display name, and adding realistic-looking attachments.</p>
-                
+                <h3 class="step-title">Email Templates</h3>
+                <p class="step-text">A critical part of any phishing simulation is the realism of the lure.
+                    Administrators can select from pre-configured email templates or build their own using the built-in
+                    HTML editor, configuring sender details like address and display name, and adding realistic-looking
+                    attachments.</p>
+
                 <img src="PhishImages/email1.jpeg" alt="Selecting an Email Template">
             </div>
 
             <div class="step">
                 <span class="step-number">05.</span>
-                <h2 class="step-title">Template Selected & Details Edited</h2>
-                <p class="step-text">Once the best template is selected, administrators can proceed to confirm campaign details and prepare for launch, ensuring sender spoofing details like the address, subject line, and display name are correctly configured to test specific vectors.</p>
-                
+                <h3 class="step-title">Template Selected & Details Edited</h3>
+                <p class="step-text">Once the best template is selected, administrators can proceed to confirm campaign
+                    details and prepare for launch, ensuring sender spoofing details like the address, subject line, and
+                    display name are correctly configured to test specific vectors.</p>
+
                 <img src="PhishImages/email2.jpeg" alt="Template Choice Confirmed">
             </div>
 
             <div class="step">
                 <span class="step-number">06.</span>
-                <h2 class="step-title">Launch Campaign</h2>
-                <p class="step-text">Launching the campaign and monitoring live logs is crucial to track interactions in real-time. The Moment the campaign is active, the dashboard provides live visual feedback on campaign success rates, allowing administrators to view the attack's results instantaneously.</p>
-                
+                <h3 class="step-title">Launch Campaign</h3>
+                <p class="step-text">Launching the campaign and monitoring live logs is crucial to track interactions in
+                    real-time. The Moment the campaign is active, the dashboard provides live visual feedback on
+                    campaign success rates, allowing administrators to view the attack's results instantaneously.</p>
+
                 <img src="PhishImages/Step_8_Launched.jpeg" alt="Launching and Monitoring Campaign">
             </div>
 
             <div class="step">
                 <span class="step-number">07.</span>
-                <h2 class="step-title">Target Views Email</h2>
-                <p class="step-text">Once the simulation is live, the target user opens the phishing email. This mimics real-world scenarios where users receive sophisticated, socially engineered emails designed to lure them into clicking a malicious link.</p>
-                
+                <h3 class="step-title">Target Views Email</h3>
+                <p class="step-text">Once the simulation is live, the target user opens the phishing email. This mimics
+                    real-world scenarios where users receive sophisticated, socially engineered emails designed to lure
+                    them into clicking a malicious link.</p>
+
                 <img src="PhishImages/Step_9_TargetViewsEmail.jpeg" alt="Target Email Client View">
             </div>
 
             <div class="step">
                 <span class="step-number">08.</span>
-                <h2 class="step-title">Clicks Malicious Link</h2>
-                <p class="step-text">Falling for the lure and clicking the link takes the user to a realistic credential-harvesting or notification landing page. This action is immediately logged by the system as a successful click event.</p>
-                
+                <h3 class="step-title">Clicks Malicious Link</h3>
+                <p class="step-text">Falling for the lure and clicking the link takes the user to a realistic
+                    credential-harvesting or notification landing page. This action is immediately logged by the system
+                    as a successful click event.</p>
+
                 <img src="PhishImages/Step_10_1_ClicksMaliciousLink.jpeg" alt="User Clicks Simulated Phishing Link">
             </div>
 
             <div class="step">
                 <span class="step-number">09.</span>
-                <h2 class="step-title">Malicious Result</h2>
-                <p class="step-text">To execute the simulation safely, I utilized Ngrok to expose the local Flask server to the internet, creating live, public-facing URLs. This mimics real-world behavior, demonstrating the severe result of credential harvesting without posing any actual security threat.</p>
-                
+                <h3 class="step-title">Malicious Result</h3>
+                <p class="step-text">To execute the simulation safely, I utilized Ngrok to expose the local Flask server
+                    to the internet, creating live, public-facing URLs. This mimics real-world behavior, demonstrating
+                    the severe result of credential harvesting without posing any actual security threat.</p>
+
                 <img src="PhishImages/Step_10_2_MaliciousResult.jpeg" alt="Ngrok Simulated Malicious Page">
             </div>
 
             <div class="step">
                 <span class="step-number">10.</span>
-                <h2 class="step-title">Live Analytics & Data Export</h2>
-                <p class="step-text">The moment a campaign launches, the dashboard actively tracks user interactions in real-time. It logs when an email is opened, when a link is clicked, and if a user correctly reported the email to IT. For compliance reporting and deeper analysis, all interaction data is captured and can be exported to CSV format, allowing the security team to calculate organization-wide metrics like average time-to-click versus average time-to-report.</p>
-                
-                <p class="step-text" style="margin-top: 20px;"><strong>Sample Output Data (`phishlist_export.csv`):</strong></p>
-                
+                <h3 class="step-title">Live Analytics & Data Export</h3>
+                <p class="step-text">The moment a campaign launches, the dashboard actively tracks user interactions in
+                    real-time. It logs when an email is opened, when a link is clicked, and if a user correctly reported
+                    the email to IT. For compliance reporting and deeper analysis, all interaction data is captured and
+                    can be exported to CSV format, allowing the security team to calculate organization-wide metrics
+                    like average time-to-click versus average time-to-report.</p>
+
+                <p class="step-text" style="margin-top: 20px;"><strong>Sample Output Data
+                        (`phishlist_export.csv`):</strong></p>
+
                 <div class="data-preview">
                     Name,Email,Status,Sent Time,Click Time,Report Time<br>
                     josh smith,joshsmith@gmail.com,SENT,2026-03-26 01:21:05,,<br>
@@ -210,17 +384,58 @@
                     josh smith,joshsmith@gmail.com,REPORTED,2026-03-26 01:21:05,,2026-03-26 01:21:30
                 </div>
 
-                <a href="phishlist_export (1).csv" class="btn" style="background: var(--text-main); color: #fff; margin-top: 20px;" download>Download Raw Export Data</a>
+                <a href="phishlist_export (1).csv" class="btn"
+                    style="background: var(--text-main); color: #fff; margin-top: 20px;" download>Download Raw Export
+                    Data</a>
             </div>
 
-            <div class="step" style="background: #f9fafb; padding: 40px; border-radius: 12px; border-left: 4px solid var(--text-main);">
-                <h2 class="step-title" style="font-size: 1.5rem;">Next Steps: AWS Cloud Migration</h2>
-                <p class="step-text" style="margin: 0;">
-                    While currently running via local hosting and Ngrok tunneling, I am actively migrating the application's infrastructure to <strong>Amazon Web Services (AWS)</strong>. This involves deploying the backend to an EC2 instance, utilizing RDS for scalable relational data storage, and ensuring secure network configurations to allow for enterprise-level load handling and high availability.
-                </p>
+            <header class="phase">
+                <div>
+                    <h2 class="phase-title">Cloud Migration Phase</h2>
+                    <p1 class="phase-text">To elevate the platform from a local setup to a robust cloud infrastructure,
+                        the application was migrated to an Amazon EC2 instance utilizing the AWS Academy Learner Lab
+                        environment. This phase transitions the system away from localized dependencies and temporary
+                        tunnels, leveraging a cloud sandbox to establish a dedicated, accessible web server optimized
+                        for evaluating live deployment metrics and continuous endpoint persistence.</p1>
+                </div>
+            </header>
+
+            <div class="step">
+                <span class="step-number">11.</span>
+                <h3 class="step-title">AWS EC2</h3>
+                <p class="step-text">Instead of depending on Ngrok to temporarily tunnel a local environment, the
+                    platform leverages AWS EC2 to establish a persistent, cloud-based infrastructure. This ensures 24/7
+                    uptime for active campaigns, stable public endpoints for tracking user interactions, and the
+                    scalability required to handle organization-wide simulations.</p>
+
+                <img src="PhishImages/AWS.png" alt="AWS">
             </div>
 
+            <header class="phase">
+                <div>
+                    <h2 class="phase-title">Final Phase</h2>
+                    <p1 class="phase-text">To introduce automated intelligence into the platform, the final phase
+                        implements a Multi-Armed Bandit recommendation framework designed to maximize simulation impact.
+                        Instead of manually guessing which vectors will yield the highest success rates, the system
+                        continuously evaluates real-time telemetry to determine the most effective lures for a given
+                        target pool. This ensures that the simulation dynamically scales in sophistication, delivering
+                        data-driven training tailored to current user behavioral patterns.</p1>
+                </div>
+            </header>
         </main>
+
+        <div class="step">
+            <span class="step-number">12.</span>
+            <h3 class="step-title">Dashboard Changes</h3>
+            <p class="step-text">To accommodate the implementation of the Multi-Armed Bandit engine, the administrator
+                dashboard underwent a UI/UX redesign. The updated interface now surfaces real-time
+                performance analytics for individual email templates, displaying critical metrics like historical
+                click-through rates, successful exploit frequencies, and report ratios. These visual enhancements
+                provide administrators with immediate, data-driven insights, making it effortless to evaluate template
+                efficacy and understand the algorithm's automated recommendation logic at a glance.</p>
+
+            <img src="PhishImages/Step_12.png" alt="MAB1">
+        </div>
 
         <footer>
             &copy; 2026 Christopher Skabich.
@@ -228,4 +443,5 @@
     </div>
 
 </body>
+
 </html>
